@@ -59,7 +59,7 @@
 
     var options = {
       'color_picker': color_picker.value,
-      'boolean_box': boolean_box.checked
+      'boolean_box': boolean_box.checked ? 1 : 0
     };
 
     // Save for next launch
@@ -97,7 +97,7 @@
 
     // Load any previously saved configuration, if available
     if(localStorage['boolean_box']) {
-      boolean_box.checked = JSON.parse(localStorage['boolean_box']);
+      boolean_box.checked = JSON.parse(localStorage['boolean_box']) === 1;
       color_picker.value = localStorage['color_picker'];
     }
   })();
